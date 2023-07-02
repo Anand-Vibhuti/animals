@@ -12,10 +12,13 @@ const handleClick=()=>{
   setAnimals([...animals,getRandomAnimals()]);  
 
 }
+const renderedAnimals=animals.map((animal, index)=>{
+return(<AnimalShow type={animal} key={index}></AnimalShow>);
+});
 return(
     <div>
         <button onClick={handleClick}> Add Animal</button>
-        <div>{animals}</div>
+        <div>{renderedAnimals}</div>
        
     </div>
 );
